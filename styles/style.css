@@ -26,10 +26,8 @@ main{
     margin:auto;*/
 }
 header{
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-column: 1/6;
+    grid-row: 1/2;
     position:relative;
     text-align: center;
     padding-top:1.5em;
@@ -111,22 +109,26 @@ h1{
 
 
 .index,.projectMain,.checkout{
-    grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column: 1/5;
     box-shadow:-.2em -.2em .5em;
-
     margin-left:2.5em;
 }
 .index,.projectMain{
     display:grid;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row: 2/3;
+}
+#standardOptions {
+    grid-column: 1/3;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+}
+#standardOptions h1 {
+    grid-column: 1/4;
 }
 .project{
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-column: 2/5;
+    grid-row: 2/3;
     display:grid;
     grid-template-columns: repeat(3, 33%);
     grid-template-rows: repeat(auto, 10px);
@@ -163,12 +165,10 @@ h1{
 .checkout{
     grid-row:3/4;
     display:grid;
-    grid-row-start: 3;
-    grid-row-end: 4;
 }
 .index{
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 10em;
+    grid-auto-rows: auto;
 }
 .projectMain{
     grid-template-columns: repeat(3, 2fr);
@@ -190,10 +190,8 @@ h1{
 
 
 #checkoutOptions{
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-column: 1/6;
+    grid-row: 2/3;
     height:3em;
     margin:0 1.5em;
     background-color: whitesmoke;
@@ -233,31 +231,30 @@ h1{
 
 
 
-.index section{
+.index > section{
     display:grid;
     text-align:center;
     grid-template-columns:repeat(2, 1fr);
     grid-auto-rows:auto;
 }
-.index section h1{
+.index > section h1{
     grid-column:1/2;
     grid-row:1/2;
 }
-.index section p{
+.index > section p{
     grid-column:1/2;
     grid-row:2/3;
 }
-.index section img{
+.index > section img{
     grid-column:2/3;
     grid-row:1/3;
 }
-.index section:hover,.projectMain section:hover{
+.index .serviceOption:hover,.projectMain section:hover{
     background-color:rgba(224,201,171,.5);
     transition:1s;
 }
 .index section:first-child{
     grid-column:1/3;
-    grid-row:1/3;
     display:inline;
 }
 .index section:first-child p{
