@@ -5,12 +5,11 @@
     margin: 0;
     padding: 0;
 }
-/* html{
-    height: 100$;
-} */
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+/* GENERAL ELEMENTS>>> */
 body{
     display:grid;
     text-align:center;
@@ -22,8 +21,6 @@ main{
     background-color:whitesmoke;
     box-shadow:-.2em .5em 1em;
     grid-column:2/5;
-    /*width:70%;
-    margin:auto;*/
 }
 header{
     grid-column: 1/6;
@@ -66,6 +63,10 @@ footer{
     border-top:.5em solid;
     padding-top:1.5em;
 }
+/* <<<GENERAL ELEMENTS */
+
+
+/* FOOTER SPECIFIC>>> */
 footer img{
     width:2em;
 }
@@ -78,6 +79,10 @@ footer section:nth-child(4){
     grid-column:1/6;
     grid-row:2;
 }
+/* <<<FOOTER SPECIFIC */
+
+
+/* HEADER SPECIFIC>>> */
 header:before{
     content:'';
     position:absolute;
@@ -96,18 +101,13 @@ header h1{
     text-align:center;
     color:white;
     text-shadow: -1.2px -1.2px 0 #000, 1.2px -1.2px 0 #000, -1.2px 1.2px 0 #000, 1.2px 1.2px 0 #000;
-/*    left:5%;
-    top:10%;
-    padding: 2em 3em;*/
-}
-
-h1{
     font-family: 'Staatliches', cursive;
     text-decoration:underline;
 }
+/* <<<HEADER SPECIFIC */
 
 
-
+/* MAIN GENERAL>>> */
 .index,.projectMain,.checkout{
     grid-column: 1/5;
     box-shadow:-.2em -.2em .5em;
@@ -117,6 +117,34 @@ h1{
     display:grid;
     grid-row: 2/3;
 }
+.project{
+    grid-column: 2/5;
+    grid-row: 2/3;
+    display:grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(auto, 10px);
+    row-gap:2em;
+}
+.checkout{
+    grid-row:3/4;
+    display:grid;
+}
+.index{
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+}
+.projectMain{
+    grid-template-columns: repeat(3, 2fr);
+    grid-auto-rows: auto;
+}
+.checkout{
+    grid-template-columns: repeat(2, 2fr);
+    grid-auto-rows: auto;
+}
+/* <<<MAIN GENERAL */
+
+
+/* INDEX MAIN SPECIFIC>>> */
 #standardOptions {
     grid-column: 1/3;
     display:grid;
@@ -126,15 +154,10 @@ h1{
 #standardOptions h1 {
     grid-column: 1/4;
 }
-.project{
-    grid-column: 2/5;
-    grid-row: 2/3;
-    display:grid;
-    grid-template-columns: repeat(3, 33%);
-    grid-template-rows: repeat(auto, 10px);
-/*     grid-auto-rows: auto; */
-    row-gap:2em;
-}
+/* <<<INDEX MAIN SPECIFIC */
+
+
+
 .project h1{
     grid-column:1/4;
     grid-row:1/2;
@@ -162,22 +185,7 @@ h1{
     height:420px;
     transition:.2s;
 }
-.checkout{
-    grid-row:3/4;
-    display:grid;
-}
-.index{
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-}
-.projectMain{
-    grid-template-columns: repeat(3, 2fr);
-    grid-auto-rows: auto;
-}
-.checkout{
-    grid-template-columns: repeat(2, 2fr);
-    grid-auto-rows: auto;
-}
+
 
 
 
