@@ -1,8 +1,8 @@
 let body = document.querySelector("body");
 let main = document.querySelector("main");
-let mainSectionList = main.getElementsByTagName('section');
+let mainSectionList = main.getElementsByClassName('serviceOption');
 let mainH1List = main.getElementsByTagName('h1');
-let buttonID
+let buttonID;
 let specificButtonString='';
 let backgroundCoverDiv = document.createElement('div');
 backgroundCoverDiv.setAttribute('id','backgroundCoverDiv');
@@ -19,6 +19,8 @@ let productDisplayOptionInput = document.createElement('input');
 productDisplayOptionInput.type = 'submit';
 productDisplayOptionInput.value = 'Book Now!'
 
+
+let productDisplayOptionHeading;
 for(let specificSection = 0;specificSection<mainSectionList.length;specificSection++){
     mainSectionList[specificSection].onclick =()=>{
         createProductDisplay(specificSection)
@@ -48,21 +50,24 @@ function clearAll(){
 
 function createProductDisplay(productSelected){
     localStorage.setItem('input',productSelected);
-    productDisplayOptionH1.appendChild(document.createTextNode(mainH1List[productSelected].textContent));
-    if (productSelected == 1){
+    productDisplayOptionH1.innerHTML = mainSectionList[productSelected].getElementsByTagName('h1')[0].innerHTML;
+    if (productSelected == 0){
         productDisplayOptionP.appendChild(document.createTextNode('Our small jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
     }
-    if (productSelected == 2){
+    if (productSelected == 1){
         productDisplayOptionP.appendChild(document.createTextNode('Our medium jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
     }
-    if (productSelected == 3){
+    if (productSelected == 2){
         productDisplayOptionP.appendChild(document.createTextNode('Our large jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
     }
-    if (productSelected == 4){
+    if (productSelected == 3){
         productDisplayOptionP.appendChild(document.createTextNode('Our bingus jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
     }
-    if (productSelected == 5){
+    if (productSelected == 4){
         productDisplayOptionP.appendChild(document.createTextNode('Our dingus jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
+    }
+    if (productSelected == 5){
+        productDisplayOptionP.appendChild(document.createTextNode('Our small jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
     }
     if (productSelected == 6){
         productDisplayOptionP.appendChild(document.createTextNode('Our small jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
@@ -71,9 +76,6 @@ function createProductDisplay(productSelected){
         productDisplayOptionP.appendChild(document.createTextNode('Our small jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
     }
     if (productSelected == 8){
-        productDisplayOptionP.appendChild(document.createTextNode('Our small jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
-    }
-    if (productSelected == 9){
         productDisplayOptionP.appendChild(document.createTextNode('Our small jobs are ideal for smaller gardens that just need a little touch up. Grass cutting, hedge clipping, weed pulling. James will see to it that any imperfections will be perfected and anything unwanted can be rooted out. A job like this would ideally be done in a mornings work and would cost you around X amount. If this type of jub would suit you then click on through to see contact details for booking.'));
     }
     productDisplayOptionForm.appendChild(productDisplayOptionInput);
