@@ -330,11 +330,7 @@ aside img{
     box-shadow:.5em .5em .4em;
     transition:.3s;
 }
-aside img:hover{
-    transition:.3s;
-    max-width:90%;
-    box-shadow:.2em .2em .3em;
-}
+
 
 
 
