@@ -401,7 +401,7 @@ aside img{
 
 
 
-.project img{
+.project img,.index img{
     border-radius:1em 1em 1em 1em;
     box-shadow:.3em .3em .3em;
 }
