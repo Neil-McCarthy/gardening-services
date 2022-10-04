@@ -4,6 +4,7 @@ let specificTabNumber;
 let specificTabString='';
 let checkoutsection = document.getElementById('checkoutsection');
 let checkoutOptions = document.getElementById('checkoutOptions').getElementsByTagName('p');
+checkoutOptions[parseInt(localStorage.getItem('input'))].style.backgroundColor = 'white';
 let checkoutOptionSelected = parseInt(localStorage.getItem('input'));
 let tableTime = document.getElementById('tableTime');
 let tableCost = document.getElementById('tableCost');
@@ -83,47 +84,40 @@ function contentDisplay(){
         tableWeather.appendChild(document.createTextNode('Yes'));
         tableMaterials.appendChild(document.createTextNode('No'));
     } else if (localStorage.getItem('input') === '3'){
-        checkouth1.appendChild(document.createTextNode('Tree Felling'))
+        checkouth1.appendChild(document.createTextNode('Tree Removal'))
         checkoutp.appendChild(document.createTextNode('This is where you can find information relating to anything relating to tree-felling'));
         tableTime.appendChild(document.createTextNode('Dependant'));
         tableCost.appendChild(document.createTextNode('50'));
         tableWeather.appendChild(document.createTextNode('Yes'));
         tableMaterials.appendChild(document.createTextNode('No'));
     } else if (localStorage.getItem('input') === '4'){
-        checkouth1.appendChild(document.createTextNode('Blank 5'))
-        checkoutp.appendChild(document.createTextNode('5'));
-        tableTime.appendChild(document.createTextNode('TBD'));
-        tableCost.appendChild(document.createTextNode('X'));
+        checkouth1.appendChild(document.createTextNode('Edging'))
+        checkoutp.appendChild(document.createTextNode('Edging content'));
+        tableTime.appendChild(document.createTextNode('3-4'));
+        tableCost.appendChild(document.createTextNode('40'));
         tableWeather.appendChild(document.createTextNode('Yes'));
-        tableMaterials.appendChild(document.createTextNode('No'));
+        tableMaterials.appendChild(document.createTextNode('15 per meter'));
     } else if (localStorage.getItem('input') === '5'){
-        checkouth1.appendChild(document.createTextNode('Blank 6'))
-        checkoutp.appendChild(document.createTextNode('6'));
-        tableTime.appendChild(document.createTextNode('TBD'));
-        tableCost.appendChild(document.createTextNode('X'));
-        tableWeather.appendChild(document.createTextNode('Yes'));
-        tableMaterials.appendChild(document.createTextNode('No'));
+        checkouth1.appendChild(document.createTextNode('Wood Working'))
+        checkoutp.appendChild(document.createTextNode('Wood Working content'));
+        tableTime.appendChild(document.createTextNode('Job dependant'));
+        tableCost.appendChild(document.createTextNode('Job dependant'));
+        tableWeather.appendChild(document.createTextNode('No'));
+        tableMaterials.appendChild(document.createTextNode('150'));
     } else if (localStorage.getItem('input') === '6'){
-        checkouth1.appendChild(document.createTextNode('Blank 7'))
-        checkoutp.appendChild(document.createTextNode('7'));
-        tableTime.appendChild(document.createTextNode('TBD'));
-        tableCost.appendChild(document.createTextNode('X'));
-        tableWeather.appendChild(document.createTextNode('Yes'));
-        tableMaterials.appendChild(document.createTextNode('No'));
+        checkouth1.appendChild(document.createTextNode('Patio Revival'))
+        checkoutp.appendChild(document.createTextNode('Patio Revival content'));
+        tableTime.appendChild(document.createTextNode('2-3'));
+        tableCost.appendChild(document.createTextNode('25'));
+        tableWeather.appendChild(document.createTextNode('No'));
+        tableMaterials.appendChild(document.createTextNode('40'));
     } else if (localStorage.getItem('input') === '7'){
-        checkouth1.appendChild(document.createTextNode('Blank 8'))
-        checkoutp.appendChild(document.createTextNode('8'));
-        tableTime.appendChild(document.createTextNode('TBD'));
-        tableCost.appendChild(document.createTextNode('X'));
-        tableWeather.appendChild(document.createTextNode('Yes'));
-        tableMaterials.appendChild(document.createTextNode('No'));
-    } else if (localStorage.getItem('input') === '8'){
-        checkouth1.appendChild(document.createTextNode('Blank 9'))
-        checkoutp.appendChild(document.createTextNode('9'));
-        tableTime.appendChild(document.createTextNode('TBD'));
-        tableCost.appendChild(document.createTextNode('X'));
-        tableWeather.appendChild(document.createTextNode('Yes'));
-        tableMaterials.appendChild(document.createTextNode('No'));
+        checkouth1.appendChild(document.createTextNode('Strip and Removal'))
+        checkoutp.appendChild(document.createTextNode('Strip and Removal content'));
+        tableTime.appendChild(document.createTextNode('1-2'));
+        tableCost.appendChild(document.createTextNode('20'));
+        tableWeather.appendChild(document.createTextNode('No'));
+        tableMaterials.appendChild(document.createTextNode('75'));
     } else {
         checkoutp.appendChild(document.createTextNode('Please select one of the options above to find a service that would suit your needs'));
         tableTime.appendChild(document.createTextNode('-'));
