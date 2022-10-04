@@ -1,13 +1,14 @@
 let tabSelector = document.getElementsByClassName('checkoutTab');
-let tabNumber
-let specificTabNumber
+let tabNumber;
+let specificTabNumber;
 let specificTabString='';
-let checkoutsection = document.getElementById('checkoutsection')
-
-let tableTime = document.getElementById('tableTime')
-let tableCost = document.getElementById('tableCost')
-let tableWeather = document.getElementById('tableWeather')
-let tableMaterials = document.getElementById('tableMaterials')
+let checkoutsection = document.getElementById('checkoutsection');
+let checkoutOptions = document.getElementById('checkoutOptions').getElementsByTagName('p');
+let checkoutOptionSelected = parseInt(localStorage.getItem('input'));
+let tableTime = document.getElementById('tableTime');
+let tableCost = document.getElementById('tableCost');
+let tableWeather = document.getElementById('tableWeather');
+let tableMaterials = document.getElementById('tableMaterials');
 
 let checkouth1 = document.createElement('h1');
 checkouth1.setAttribute('id','checkouth1');
@@ -26,22 +27,37 @@ for (let specificTabNumber=0; specificTabNumber < tabSelector.length; specificTa
                 tabSelector[tabChecker].style.padding = '.5em 1em';
             }
         }
-        tabExecutor();
+        console.log(localStorage.getItem('input'));
+        // tabExecutor();
     }
 }
 
 
-function tabExecutor(){
+for (let specificOption = 0;specificOption < checkoutOptions.length;specificOption++) {
+    checkoutOptions[specificOption].addEventListener('mouseover', function () {
+        checkoutOptions[specificOption].style.backgroundColor = 'white';
+    })
+    checkoutOptions[specificOption].onclick = () => {
+        checkoutOptions[checkoutOptionSelected].style.backgroundColor = '#e0c9ab';
+        checkoutOptionSelected = specificOption;
+        tabExecutor(specificOption);
+    }
+    checkoutOptions[specificOption].addEventListener('mouseout', function () {
+        if (checkoutOptionSelected != specificOption) {
+            checkoutOptions[specificOption].style.backgroundColor = '#e0c9ab';
+        }
+    })
+}
+function tabExecutor(tabSelected){
     clearAll(checkouth1, 0);
     clearAll(checkoutp, 0);
     clearAll(tableTime, 0);
     clearAll(tableCost, 0);
     clearAll(tableWeather, 0);
     clearAll(tableMaterials, 0);
-    tabSelector[tabNumber].style.backgroundColor='whitesmoke';
-    tabSelector[tabNumber].style.padding = '.5em 1em .7em 1em';
-    localStorage.setItem('input',tabNumber);
-    console.log(localStorage.getItem('input'));
+    checkoutOptions[tabSelected].style.backgroundColor='whitesmoke';
+    checkoutOptions[tabSelected].style.padding = '.5em 1em .7em 1em';
+    localStorage.setItem('input',tabSelected.toString());
     contentDisplay();
 }
 function contentDisplay(){

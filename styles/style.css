@@ -299,7 +299,7 @@ aside p{
 }
 
 
-nav a:hover,#checkoutOptions li p:hover{
+nav a:hover{
     background-color:whitesmoke;
     transition:.5s;
 }
