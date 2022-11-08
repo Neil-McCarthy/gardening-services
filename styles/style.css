@@ -79,6 +79,14 @@ footer section:nth-child(4){
     grid-column:1/6;
     grid-row:2;
 }
+footer li{
+    display: inline-block;
+    padding:0;
+    height:100%;
+}
+footer img{
+    width:2em;
+}
 /* <<<FOOTER SPECIFIC */
 
 
@@ -209,6 +217,7 @@ header h1{
     text-align:center;
     padding-top:.5em;
     border-bottom:.3em solid;
+    height: 100%;;
 }
 #checkoutOptions li{
     display:inline;
@@ -305,7 +314,7 @@ nav a:hover{
 }
 
 
-ul {
+nav ul{
     text-align:right;
     list-style: none;
     height:100%;

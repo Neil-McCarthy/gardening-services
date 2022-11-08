@@ -49,7 +49,7 @@ for (let specificImage=0; specificImage < projectImageCollector.length; specific
         console.log(projectImageCollector[specificImage].height);
         selectImage = specificImage;
         dimensionCorrector()
-        focusImageH1.appendChild(document.createTextNode('Heading'));
+        // focusImageH1.appendChild(document.createTextNode('Heading'));
         focusImageImg.setAttribute('src',projectImageCollector[specificImage].src);
         focusImageSection.appendChild(focusImageImg);
         body.appendChild(focusImageSection);
